@@ -6,9 +6,15 @@
             alt="Card Image"
             class="object-contain w-40 h-40"
         />
+        
+        <slot name="otherNumber"></slot>
+
         </figure> 
         <div class="card-body">
             <h2 class="card-title w-96">
+               
+                <slot name="cartNumber"></slot>
+
                 <router-link class="link link-hover" :to="`/product/${cartProduct.id}`">{{ cartProduct.title }}</router-link>
             </h2>
             <p>{{ toCurrency(cartProduct.cost) }}</p>

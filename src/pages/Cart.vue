@@ -5,9 +5,15 @@
         </div>
         <div class="space-y-4">
             <CartCard
-            v-for="(cartProduct, index) in formattedCart"
-            :key="index"
-            :cartProduct="cartProduct"/>
+                v-for="(cartProduct, index) in formattedCart"
+                :key="index"
+                :cartProduct="cartProduct">
+                
+                <template v-slot:cartNumber>
+                    {{ index+1 }}
+                </template>
+
+            </CartCard>
             <div class="text-right text-2xl md:text-2xl font-bold py-4">
                 ยอดรวม: {{ toCurrency(cartStore.total) }}
             </div>
